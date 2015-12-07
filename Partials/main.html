@@ -1,0 +1,31 @@
+<div id="contentBoxApp" >
+  <div id="GridCtrl" ng-controller="GridCtrl">  
+    <div class="toolbar">
+      <div class="container">
+        <div class="toolbar-section">
+          <span class="logo toolbar-item"><i class="fa fa-picture-o"></i>Pinster</span>
+        </div><!-- /.toolbar-section -->
+        <div class="toolbar-section">
+          <div class="toolbar-item form-field">
+            <input type="text" name="filter" placeholder="phrase to filter" ng-model="search"/>
+          </div>
+        </div><!-- /.toolbar-section -->
+      </div><!-- /.container -->
+    </div><!-- /.toolbar -->
+    <div class="container dynamic-grid">
+      <article class="grid-item content-box" ng-repeat="(gridKey, gridItem) in gridItems | filter:filterBySearch">
+        <div class="inner">
+        <img class="content-box-thumb"src="{{ gridItem.img }}" alt="tech image" />
+        <h1 class="content-box-header">
+          {{ gridItem.headerText }}
+        </h1>
+        <p class="content-box-blurb">
+          {{ gridItem.blurbText }}
+        </p>
+        <a class="readmore-link" href="#" ng-click="toggleBlurb($event)">read more</a>
+        </div>
+      </article><!-- /.content-box -->
+
+    </div><!-- /.dynamic-grid -->
+  </div><!-- /#GridCtrl -->
+</div><!-- /#contentBoxApp -->
