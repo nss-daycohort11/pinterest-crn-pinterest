@@ -43,7 +43,7 @@ $routeProvider
     }]
   }
 })
-.otherwise('/pinster/login.html');
+.otherwise('/pinster/login');
 ;
 }]);
 
