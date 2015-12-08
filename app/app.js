@@ -19,6 +19,9 @@ contentBoxApp.config(['$routeProvider',
       templateUrl: 'partials/main.html',
       controller: 'GridCtrl'
     })
+    .when('/pinster/user', {
+      templateUrl: 'partials/usersBoards.html',
+      controller: 'GridCtrl'
+    })
      .otherwise({ redirectTo: '/login' });
  }]);
-  }]);

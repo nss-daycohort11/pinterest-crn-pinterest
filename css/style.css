@@ -185,3 +185,15 @@ a:hover {
   margin: 5px 5px 0px 5px;
   text-align: right;
 }
+
+ul {
+  list-style-type: none;
+}
+li {
+  display: inline;
+}
+
+.content-box-inside {
+  width: 30%;
+  }
+
