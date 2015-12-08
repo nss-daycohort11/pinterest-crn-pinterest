@@ -127,6 +127,16 @@ a:hover {
      -moz-column-gap: 15px;
           column-gap: 15px;
 }
+.dynamic-grid-user {
+  position: relative;
+  z-index: 1;
+  -webkit-columns: 240px 4;
+     -moz-columns: 240px 4;
+          columns: 240px 4;
+  -webkit-column-gap: 15px;
+     -moz-column-gap: 15px;
+          column-gap: 15px;
+}
 .dynamic-grid.container {
   padding-top: 6rem;
 }
@@ -138,6 +148,19 @@ a:hover {
   max-width: 100%;
   column-break-inside: avoid;
 }
+
+.grid-item-user {
+  position: relative;
+  display: inline-block;
+  margin: 1rem;
+  max-width: 70%;
+  column-break-inside: avoid;
+}
+
+.user-inner {
+  padding: 2rem;
+}
+
 .grid-item .inner {
   padding: 1rem 1rem 1rem 1rem;
 }
@@ -155,6 +178,12 @@ a:hover {
   height: 4rem;
   left: 0px;
   top: 0px;
+}
+
+.content-box-thumb-small {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .content-box-thumb {
@@ -196,4 +225,9 @@ li {
 .content-box-inside {
   width: 30%;
   }
-
+#usersInterests {
+  margin-right: 1%;
+}
+#specificInterest {
+  text-align: center;
+}
