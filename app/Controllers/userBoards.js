@@ -53,15 +53,13 @@ contentBoxApp.controller('userBoards', ["currentAuth", "$scope", "$firebaseArray
 
   }
 
+  // userBoardsRef is the Firebase ref to given users "boards" object
+  var userBoardsRef = new Firebase("https://crn-pinterest.firebaseio.com/users/" + currentAuth.uid + "/boards")
 
+  //grid items variable used to populate userBoards partial
+  $scope.gridItems = $firebaseArray(userBoardsRef);
   
-  //$scope.userData = userData;
-
-
-  var allPinsRef = new Firebase("https://crn-pinterest.firebaseio.com/allPins")
-
-  $scope.gridItems = $firebaseArray(allPinsRef);
-  
+  //searching function on main page:
   $scope.search = '';
   $scope.$watch('search', function (value) {
       regex = new RegExp('\\b' + $scope.escapeRegExp(value), 'i');
