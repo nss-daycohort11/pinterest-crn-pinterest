@@ -5,8 +5,9 @@
         <div class="toolbar-section">
           <span class="logo toolbar-item"><i class="fa fa-picture-o"></i>Pinster</span>
         </div><!-- /.toolbar-section -->
-        <div class="toolbar-section">
+        <div class="toolbar-section">   
           <div class="toolbar-item form-field">
+            <button class="user-board-button" ng-model="userData">{{userData.email}}'s boards</button>
             <input type="text" name="filter" placeholder="phrase to filter" ng-model="search"/>
           </div>
         </div><!-- /.toolbar-section -->
@@ -22,7 +23,10 @@
         <p class="content-box-blurb">
           {{ gridItem.blurbText }}
         </p>
-        <a class="readmore-link" href="#" ng-click="toggleBlurb($event)">read more</a>
+        <button id="pin-it" class="pin-it-button">Pin It!</button>
+        <a class="readmore-link" href="#" ng-click="toggleBlurb($event)">read more
+
+        </a>
         </div>
       </article><!-- /.content-box -->
 

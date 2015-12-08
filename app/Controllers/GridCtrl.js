@@ -1,4 +1,4 @@
-contentBoxApp.controller('GridCtrl', ["currentAuth", "$scope", "$firebaseArray", function(currentAuth, $scope, $firebaseArray) {
+contentBoxApp.controller('GridCtrl', ["currentAuth", "$scope", "$firebaseArray", "$firebaseObject", function(currentAuth, $scope, $firebaseArray, $firebaseObject) {
    console.log("got into GridCtrl!", currentAuth); 
   // currentAuth (provided by resolve) will contain the
   // authenticated user or null if not logged in
@@ -7,6 +7,16 @@ contentBoxApp.controller('GridCtrl', ["currentAuth", "$scope", "$firebaseArray",
   $scope.escapeRegExp = function(string){
       return string.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
   };
+
+  var userRef = new Firebase("https://crn-pinterest.firebaseio.com/users/" + currentAuth.uid);
+
+  var userData = $firebaseObject(userRef);
+
+  console.log("userData", userData);
+  $scope.userData = userData;
+  
+  $scope.email = $scope.userData.email;
+
 
   var allPinsRef = new Firebase("https://crn-pinterest.firebaseio.com/allPins")
 
