@@ -12,7 +12,7 @@ body {
 body:before {
   content: '';
   display: block;
-  //position: fixed;
+  // position: fixed;
   z-index: 0;
   height: 100%;
   width: 100%;
@@ -128,7 +128,9 @@ a:hover {
 
 .dynamic-grid {
   position: relative;
-  z-index: 1;
+  
+  // z-index: 1;
+  
   -webkit-columns: 240px 3;
      -moz-columns: 240px 3;
           columns: 240px 3;
@@ -142,7 +144,10 @@ a:hover {
 
 .dynamic-grid-user {
  position: relative;
- z-index: 1;
+
+ //ruins the modal :(
+ // z-index: 1;
+
  padding-top: 50px;
  -webkit-columns: 240px 4;
     -moz-columns: 240px 4;
@@ -260,7 +265,7 @@ a:hover {
 form {
   padding: 20px 0;
   position: relative;
-  z-index: 2;
+  // z-index: 2;
 }
 form input {
   -webkit-appearance: none;

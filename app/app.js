@@ -18,7 +18,7 @@ $routeProvider
     })
 .when('/pinster/user', {
       templateUrl: 'Partials/userBoards.html',
-      controller: 'GridCtrl',
+      controller: 'userBoards',
       resolve: {
     // controller will not be loaded until $requireAuth resolves
     "currentAuth": ["Auth", function(Auth) {

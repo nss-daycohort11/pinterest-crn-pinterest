@@ -4,7 +4,7 @@
       <div class="container">
         <div class="toolbar-section">
           <span class="logo toolbar-item"><i class="fa fa-picture-o"></i>Pinster
-          <button id="create-new-board-button" class="user-board-button">Add Board</button></span>
+          <button id="create-new-board-button" class="user-board-button" ng-click="showAddBoardModal()">Add Board</button></span>
         </div><!-- /.toolbar-section -->
         <div class="toolbar-section">
           <div class="toolbar-item form-field">
@@ -27,6 +27,7 @@
           {{ gridItem.blurbText }}
         </p>
 
+
 <!--         <ul class="smallPics">
           <li>
         <a href="#"><img class="content-box-inside" src="{{ gridItem.img }}" alt="tech image" /></a></li>
@@ -43,3 +44,33 @@
     </div><!-- /.dynamic-grid -->
   </div><!-- /#GridCtrl -->
 </div><!-- /#contentBoxApp -->
+<!-- add board modal -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="loginModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Create Your New Modal</h4>
+          </div>
+          <div class="modal-body">
+            <div>
+              <label for="board-title">Title:</label><input type="text" ng-model="title">
+            </div>
+            <!-- <div>
+              <label for="url">Url:</label><input type="text">
+            </div> -->
+            <div>
+              <label for="image-url">Image Url:</label><input type="text" ng-model="imageurl">
+            </div>
+            <div>
+              <label for="board-description">Description:</label><input type="text" ng-model="description">
+            </div>
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" ng-click="createNewBoard()">Save changes</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->

@@ -113,7 +113,6 @@ a:hover {
 
 .dynamic-grid {
   position: relative;
-  z-index: 1;
   -webkit-columns: 240px 3;
   -moz-columns: 240px 3;
   columns: 240px 3;
@@ -126,7 +125,6 @@ a:hover {
 
 .dynamic-grid-user {
   position: relative;
-  z-index: 1;
   padding-top: 50px;
   -webkit-columns: 240px 4;
   -moz-columns: 240px 4;
@@ -231,8 +229,7 @@ a:hover {
 
 form {
   padding: 20px 0;
-  position: relative;
-  z-index: 2; }
+  position: relative; }
 
 form input {
   -webkit-appearance: none;
