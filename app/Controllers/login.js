@@ -9,8 +9,17 @@ contentBoxApp.controller('login', ["$scope", "Auth",
         email: $scope.email,
         password: $scope.password
       }).then(function(userData) {
+      	var uid = userData.uid;
       	console.log("user created. User id:", userData.uid);
         $scope.message = "User created with uid: " + userData.uid;
+        var newfbRef = new Firebase("https://crn-pinterest.firebaseio.com/users/" + uid);
+		    var userData = {
+		    	"user": uid,
+		    	"email": $scope.email,
+		    	"password": $scope.password
+		    };
+		    // sets new user data object to firebase
+		    newfbRef.set(userData);
       }).catch(function(error) {
         $scope.error = error;
       });
