@@ -124,6 +124,29 @@ a:hover {
 .dynamic-grid.container {
   padding-top: 6rem; }
 
+.dynamic-grid-user {
+  position: relative;
+  z-index: 1;
+  padding-top: 50px;
+  -webkit-columns: 240px 4;
+  -moz-columns: 240px 4;
+  columns: 240px 4;
+  -webkit-column-gap: 15px;
+  -moz-column-gap: 15px;
+  column-gap: 15px; }
+
+.grid-item-user {
+  position: relative;
+  display: inline-block;
+  margin: 1rem;
+  max-width: 70%;
+  column-break-inside: avoid; }
+
+.content-box-thumb-small {
+  display: block;
+  max-width: 100%;
+  height: auto; }
+
 .grid-item {
   position: relative;
   display: inline-block;

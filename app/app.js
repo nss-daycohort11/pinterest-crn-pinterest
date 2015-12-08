@@ -16,6 +16,19 @@ $routeProvider
       templateUrl: 'Partials/login.html',
       controller: 'login'
     })
+.when('/pinster/user', {
+      templateUrl: 'Partials/userBoards.html',
+      controller: 'GridCtrl',
+      resolve: {
+    // controller will not be loaded until $requireAuth resolves
+    "currentAuth": ["Auth", function(Auth) {
+      console.log("running currentAuth!");
+      // $requireAuth returns a promise so the resolve waits for it to complete
+      // If the promise is rejected, it will throw a $stateChangeError (see above)
+      return Auth.$requireAuth();
+    }]
+  }
+    })
 .when('/pinster/main', {
   // the rest is the same for ui-router and ngRoute...
   controller: "GridCtrl",

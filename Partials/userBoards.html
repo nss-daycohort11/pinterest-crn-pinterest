@@ -1,0 +1,44 @@
+<div id="contentBoxApp" >
+  <div id="GridCtrl">  
+    <div class="toolbar">
+      <div class="container">
+        <div class="toolbar-section">
+          <span class="logo toolbar-item"><i class="fa fa-picture-o"></i>Pinster</span>
+        </div><!-- /.toolbar-section -->
+        <div class="toolbar-section">
+          <div class="toolbar-item form-field">
+            <input type="text" name="filter" placeholder="phrase to filter" ng-model="search"/><span id="usersInterests">USERNAME'S INTERESTS</span>
+          </div>
+        </div><!-- /.toolbar-section -->
+      </div><!-- /.container -->
+    </div><!-- /.toolbar -->
+
+    <div class="container dynamic-grid-user">
+      <article class="grid-item-user content-box" ng-repeat="(gridKey, gridItem) in gridItems | filter:filterBySearch">
+    <div id="specificInterest">Specific Interest Here</div>
+        <div class="user-inner">
+        <a href="#"><img class="content-box-thumb-small"src="{{ gridItem.img }}" alt="tech image" /></a>
+
+        <a href="#"><h1 class="content-box-header">
+          {{ gridItem.headerText }}
+        </h1></a>
+        <p class="content-box-blurb">
+          {{ gridItem.blurbText }}
+        </p>
+
+<!--         <ul class="smallPics">
+          <li>
+        <a href="#"><img class="content-box-inside" src="{{ gridItem.img }}" alt="tech image" /></a></li>
+          <li>
+        <a href="#"><img class="content-box-inside" src="{{ gridItem.img }}" alt="tech image" /></a></li>
+          <li>
+        <a href="#"><img class="content-box-inside" src="{{ gridItem.img }}" alt="tech image" /></a></li>
+        </ul> -->
+
+        <a class="readmore-link" href="#" ng-click="toggleBlurb($event)">read more</a>
+        </div>
+      </article><!-- /.content-box -->
+
+    </div><!-- /.dynamic-grid -->
+  </div><!-- /#GridCtrl -->
+</div><!-- /#contentBoxApp -->
