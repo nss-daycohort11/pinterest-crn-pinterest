@@ -54,7 +54,7 @@ contentBoxApp.controller('userBoards', ["currentAuth", "$scope", "$firebaseArray
   }
 
   // userBoardsRef is the Firebase ref to given users "boards" object
-  var userBoardsRef = new Firebase("https://crn-pinterest.firebaseio.com/users/" + currentAuth.uid + "/boards")
+  var userBoardsRef = new Firebase("https://crn-pinterest.firebaseio.com/users/" + currentAuth.uid + "/boards");
 
   //grid items variable used to populate userBoards partial
   $scope.gridItems = $firebaseArray(userBoardsRef);

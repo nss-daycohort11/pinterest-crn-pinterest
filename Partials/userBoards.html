@@ -3,8 +3,8 @@
     <div class="toolbar">
       <div class="container">
         <div class="toolbar-section">
-          <span class="logo toolbar-item"><i class="fa fa-picture-o"></i>Pinster
-          <button id="create-new-board-button" class="user-board-button" ng-click="showAddBoardModal()">Add Board</button></span>
+          <span class="logo toolbar-item"><i class="fa fa-picture-o"></i><a href="#/pinster/main/">Pinster</a>
+          <button id="create-new-board-button" class="user-board-button" ng-click="showAddBoardModal()">Add Pin</button></span>
         </div><!-- /.toolbar-section -->
         <div class="toolbar-section">
           <div class="toolbar-item form-field">
@@ -16,26 +16,16 @@
 
     <div class="container dynamic-grid-user">
       <article class="grid-item-user content-box" ng-repeat="(gridKey, gridItem) in gridItems | filter:filterBySearch">
-    <div id="specificInterest">Specific Interest Here</div>
-        <div class="user-inner">
-        <a href="#"><img class="content-box-thumb-small"src="{{ gridItem.img }}" alt="tech image" /></a>
-
+    <!-- <div id="specificInterest">Specific Interest Here</div> -->
         <a href="#"><h1 class="content-box-header">
           {{ gridItem.headerText }}
         </h1></a>
+        <div class="user-inner">
+        <a href="#"><img class="content-box-thumb-small"src="{{ gridItem.img }}" alt="tech image" /></a>
+
         <p class="content-box-blurb">
           {{ gridItem.blurbText }}
         </p>
-
-
-<!--         <ul class="smallPics">
-          <li>
-        <a href="#"><img class="content-box-inside" src="{{ gridItem.img }}" alt="tech image" /></a></li>
-          <li>
-        <a href="#"><img class="content-box-inside" src="{{ gridItem.img }}" alt="tech image" /></a></li>
-          <li>
-        <a href="#"><img class="content-box-inside" src="{{ gridItem.img }}" alt="tech image" /></a></li>
-        </ul> -->
 
         <a class="readmore-link" href="#" ng-click="toggleBlurb($event)">read more</a>
         </div>
