@@ -1,6 +1,9 @@
 contentBoxApp.controller('GridCtrl', function($scope) {
 
+
   console.log("I see GridCtrl!!");
+
+  //console.log("currentAuth", currentAuth);
 
   var regex;
   $scope.escapeRegExp = function(string){

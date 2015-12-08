@@ -1,6 +1,8 @@
-// app.factory("app",["$q", "$http", function($q, $http) {
 
-// 	 console.log("test");
-
-
-// }])
+contentBoxApp.factory('Auth', ["$firebaseAuth",
+  function($firebaseAuth) {
+  	console.log("I see Auth!!");
+    var ref = new Firebase("https://crn-pinterest.firebaseio.com/");
+    return $firebaseAuth(ref);
+  }
+]);
