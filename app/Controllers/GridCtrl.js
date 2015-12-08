@@ -13,9 +13,8 @@ contentBoxApp.controller('GridCtrl', ["currentAuth", "$scope", "$firebaseArray",
   var userData = $firebaseObject(userRef);
 
   console.log("userData", userData);
-  $scope.userData = userData;
   
-  $scope.email = $scope.userData.email;
+  $scope.userData = userData;
 
 
   var allPinsRef = new Firebase("https://crn-pinterest.firebaseio.com/allPins")
