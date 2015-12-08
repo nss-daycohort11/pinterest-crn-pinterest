@@ -1,3 +1,7 @@
-# Pinterest
+# CRN-Pinterest
 
-My project for NSS front end course.
+Log in with email/password complete.  
+
+Log in with Facebook complete along with authentication for both in Firebase database. 
+ 
+

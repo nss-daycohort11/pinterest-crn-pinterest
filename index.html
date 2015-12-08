@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Nashville Software School</title>
+  <title>CRN-Pinterest</title>
   
   <link rel="stylesheet" type="text/css" href="styles/main.css"> 
 
@@ -11,20 +11,32 @@
 
 <body ng-app="app">
 
+  <section ng-controller="loginCtrl">
+   <div ng-view></div> 
+  </section>
 
-  <div ng-view></div>
+
+
+
   
+
+  <!-- angular script tags -->
     <script src="lib/bower_components/angular/angular.min.js"></script>
     <script src="lib/bower_components/angular-route/angular-route.min.js"></script>
+
+  <!-- firebase script tags -->
     <script src="lib/bower_components/firebase/firebase.js"></script>
+
+  <!-- angular firebase script tags -->  
     <script src="lib/bower_components/angularfire/dist/angularfire.min.js"></script>
     <script src="lib/bower_components/angular-filter/dist/angular-filter.min.js"></script>
-    <script src="app/app.js"></script>
+    
     <script src="app/Factories/factory1.js"></script>
+    <script src="app/app.js"></script>
 
-    <script src="app/Controllers/ctrl1.js"></script>
-    <script src="app/Controllers/ctrl2.js"></script>
-    <script src="app/Controllers/ctrl3.js"></script>
+    <script src="app/Controllers/loginCtrl.js"></script>
+    <!-- // <script src="app/Controllers/ctrl2.js"></script> -->
+    <!-- // <script src="app/Controllers/ctrl3.js"></script> -->
 
 </body>
 </html>
