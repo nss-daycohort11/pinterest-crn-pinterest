@@ -1,3 +1,4 @@
+/// factory is used for a central location, where other modules can check the auth data for users, it's called as a dependencies in our app.js file ///
 
 contentBoxApp.factory('Auth', ["$firebaseAuth",
   function($firebaseAuth) {

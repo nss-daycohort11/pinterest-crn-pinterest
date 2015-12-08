@@ -1,5 +1,5 @@
 {
-  "allPins": {
+  "allPins": [
     "1":
     {
       "img": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/6234/QrXgXMhCSouyhU7idq7g_IMG_8402.jpg",
@@ -72,6 +72,5 @@
       "headerText": "Visit to the Vineyard",
       "blurbText": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit ducimus recusandae deleniti nobis unde dolor minus ut corporis saepe tempora architecto, possimus! Obcaecati odit nam vero ipsum odio vel iste."
     }
-  }
-
+  ]
 }

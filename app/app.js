@@ -1,3 +1,5 @@
+/// this module pulls together all other modules for data to be injected into the index.html when user adds info to their database ///
+
 var contentBoxApp = angular.module('contentBoxApp', ['ngRoute', 'firebase']);
 
 contentBoxApp.run(["$rootScope", "$location", function($rootScope, $location) {
@@ -46,8 +48,3 @@ $routeProvider
 .otherwise('/pinster/login.html');
 ;
 }]);
-
-
-
-
-
