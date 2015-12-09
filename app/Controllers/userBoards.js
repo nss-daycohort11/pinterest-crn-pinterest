@@ -1,7 +1,10 @@
-contentBoxApp.controller('userBoards', ["currentAuth", "$scope", "$firebaseArray", "$firebaseObject", function(currentAuth, $scope, $firebaseArray, $firebaseObject) {
-   console.log("got into user boards!", currentAuth); 
+contentBoxApp.controller('userBoards', ["$scope", "$firebaseArray", "$firebaseObject", function($scope, $firebaseArray, $firebaseObject) {
+   console.log("got into user boards!"); 
   // currentAuth (provided by resolve) will contain the
   // authenticated user or null if not logged in
+
+  var ref = new Firebase("https://crn-pinterest.firebaseio.com/");
+  var currentAuth = ref.getAuth();
 
   var regex;
   $scope.escapeRegExp = function(string){

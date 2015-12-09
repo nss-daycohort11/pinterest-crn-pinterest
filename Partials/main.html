@@ -6,16 +6,19 @@
       <div class="container">
         <div class="toolbar-section">
           <span class="logo toolbar-item"><i class="fa fa-picture-o"></i>Pinster</span>
+
         </div><!-- /.toolbar-section -->
-        <div class="toolbar-section">   
+        <div class="toolbar-section">
           <div class="toolbar-item form-field">
             <input type="text" class="search-bar" name="filter" placeholder="phrase to filter" ng-model="search">
-            <a href="#/pinster/user/" class="nav-button btn btn-default btn-xs" ng-model="userData">{{userData.email}}'s PINS</a>
+            <a href="#/pinster/login" class="nav-button btn btn-default btn-xs" ng-click="logout()">Logout</a>
+            <a href="#/pinster/user/" class="btn btn-default btn-xs" ng-model="userData">{{userData.email}}'s PINS</a>
           </div>
         </div><!-- /.toolbar-section -->
       </div><!-- /.container -->
     </div><!-- /.toolbar -->
     <div class="container dynamic-grid">
+
       <article class="grid-item content-box" ng-repeat="(gridKey, gridItem) in gridItems | filter:filterBySearch">
         <div class="inner">
         <img class="content-box-thumb"src="{{ gridItem.img }}" alt="tech image" />

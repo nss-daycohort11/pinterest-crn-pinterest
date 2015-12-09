@@ -1,7 +1,7 @@
 /// this module allows the user to log in/register with email and password for the website ///
 
-contentBoxApp.controller('login', ["$scope", "Auth",
-  function($scope, Auth) {
+contentBoxApp.controller('login', ["$scope", "Auth", "$location",
+  function($scope, Auth, $location) {
   	console.log("I see login!!");
     $scope.createUser = function() {
       $scope.message = null;
@@ -31,10 +31,9 @@ contentBoxApp.controller('login', ["$scope", "Auth",
     /// leaving email and password an empty string so what user inputs can then be saved to the database //
     $scope.email = "";
     $scope.password = "";
-
+    var ref = new Firebase("https://crn-pinterest.firebaseio.com/");
     /// if user has already registered, this allows them to log in without complications ///
     $scope.login = function() {
-	    var ref = new Firebase("https://crn-pinterest.firebaseio.com/");
 			ref.authWithPassword({
 	  		email    : $scope.email,
 	  		password : $scope.password
@@ -42,7 +41,10 @@ contentBoxApp.controller('login', ["$scope", "Auth",
 		  	if (error) {
 		    	console.log("Login Failed!", error);
 		  	} else {
+          $location.path("/pinster/main/");
+          $scope.$apply();
 		    	console.log("Authenticated successfully with payload:", authData);
+          
 		  	}
 			});
 	  }

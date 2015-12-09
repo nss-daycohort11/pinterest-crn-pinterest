@@ -1,11 +1,12 @@
 /// this module uses a 'contentBox' that sets the grid like functionality for the website ///
 
-contentBoxApp.controller('GridCtrl', ["currentAuth", "$scope", "$firebaseArray", "$firebaseObject", function(currentAuth, $scope, $firebaseArray, $firebaseObject) {
-   console.log("got into GridCtrl!", currentAuth); 
+contentBoxApp.controller('GridCtrl', ["$scope", "$firebaseArray", "$firebaseObject", function($scope, $firebaseArray, $firebaseObject) {
+   console.log("got into GridCtrl!"); 
   // currentAuth (provided by resolve) will contain the
   // authenticated user or null if not logged in
 
-  
+  var ref = new Firebase("https://crn-pinterest.firebaseio.com/");
+  var currentAuth = ref.getAuth();
   /// referencing firebase data with the current user id ///
   var userRef = new Firebase("https://crn-pinterest.firebaseio.com/users/" + currentAuth.uid);
 
@@ -58,5 +59,17 @@ contentBoxApp.controller('GridCtrl', ["currentAuth", "$scope", "$firebaseArray",
   $scope.toggleBlurb = function($event) {
     console.log($event);
   };
+
+  $scope.logout = function() {
+
+  // get authdata object by calling firebase method on reference created up top
+  var authData = ref.getAuth();
+  console.log("authData", authData);
+  console.log("authData.uid", authData.uid);
+  // construct new firebase reference to user data locatio
+  // unauthorize user location
+  userRef.unauth();
+  console.log("authData", authData);
+  }
 
 }]);
