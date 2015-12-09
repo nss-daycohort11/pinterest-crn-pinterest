@@ -23,16 +23,52 @@ body:before {
   box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.55);
 }
 
+label {
+  margin-right: 5px;
+}
+
 a {
   color: #0074D9;
   text-decoration: none;
   font-size: 0.85rem;
-  opacity: 0.75;
   linear-gradient: ease-in-out 0.6s;
 }
 a:hover {
   linear-gradient: ease-in-out 0.6s;
   opacity: 1;
+}
+
+.logo-login {
+  color: white;
+  font-size: 2.8em;
+}
+
+.heading {
+  display: inline;
+  margin-left: 6px;
+}
+
+.nav-button {
+  background-color: white;
+  z-index: 5;
+  background: rgba(255, 255, 255, 1);
+  margin-left: 280px;
+}
+
+#pinster {
+  color: white;
+  font-size: 1.1em;
+}
+
+.add-pin {
+  background-color: white;
+  z-index: 5;
+  background: rgba(255, 255, 255, 1);
+  margin-left: 375px;
+}
+
+.search-bar {
+  text-align: center;
 }
 
 .container {
@@ -60,7 +96,7 @@ a:hover {
   vertical-align: middle;
 }
 .toolbar-section:first-child {
-  width: 60%;
+  width: 35%;
 }
 .toolbar-section:last-child {
   width: 35%;
@@ -78,6 +114,7 @@ a:hover {
   display: block;
   padding: 1rem 1rem 1rem 1rem;
   white-space: nowrap;
+  padding-top: 7px;
 }
 
 .form-field {
@@ -86,7 +123,8 @@ a:hover {
 .form-field input {
   font-size: 1rem;
   line-height: 1.4rem;
-  height: 1.4rem;
+  height: 2.4rem;
+  width: 200px;
   max-width: 100%;
   display: inline-block;
   padding: 4px 7px;
@@ -124,6 +162,7 @@ a:hover {
 
 .pin-it-button {
   color: #223749;
+  margin-top: 8px;
 }
 
 .dynamic-grid {
@@ -203,9 +242,17 @@ a:hover {
   height: auto;
 }
 
+.board-header {
+  font-size: 1rem;
+  margin: 0.75rem 0rem 0rem 0rem;
+  margin-left: 9px;
+  color: #315f84
+}
+
 .content-box-header {
   font-size: 1rem;
   margin: 0.75rem 0rem 0rem 0rem;
+  color: #315f84;
 }
 
 .content-box-blurb {
@@ -221,7 +268,16 @@ a:hover {
 }
 
 .readmore-link {
+  display: inline-block;
+  position: absolute;
+  right: 7px;
+  margin: 5px 5px 0px 5px;
+  text-align: right;
+  margin-top: 8px;
+}
+.user-readmore-link {
   display: block;
+  right: 7px;
   margin: 5px 5px 0px 5px;
   text-align: right;
 }
@@ -306,5 +362,5 @@ form button {
           transition-duration: 0.25s;
 }
 form button:hover {
-  background-color: #223749;
+  background-color: #4E5F6D;
 }

@@ -16,6 +16,7 @@ contentBoxApp.controller('userBoards', ["currentAuth", "$scope", "$firebaseArray
   }
 
   var userRef = new Firebase("https://crn-pinterest.firebaseio.com/users/" + currentAuth.uid);
+  var allPinsRef = new Firebase("https://crn-pinterest.firebaseio.com/allPins/");
 
   $scope.userData = $firebaseObject(userRef);
 
@@ -35,6 +36,7 @@ contentBoxApp.controller('userBoards', ["currentAuth", "$scope", "$firebaseArray
   $scope.title = "";
   $scope.imageurl = "";
   $scope.description = "";
+  $scope.url = "";
 
   //on click of "save" in modal, create new object
   //with user's input data to post under user's key in firebase
@@ -44,12 +46,15 @@ contentBoxApp.controller('userBoards', ["currentAuth", "$scope", "$firebaseArray
     var newBoard = {
       "headerText": $scope.title,
       "blurbText": $scope.description,
-      "img": $scope.imageurl
+      "img": $scope.imageurl,
+      "url": $scope.url
     }
+
     console.log("newBoard", newBoard);
 
-
+    allPinsRef.push(newBoard);
     userRef.child("boards").push(newBoard);
+    $("#loginModal").modal("hide");
 
   }
 

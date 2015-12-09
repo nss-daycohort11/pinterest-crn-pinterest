@@ -7,8 +7,8 @@
         </div><!-- /.toolbar-section -->
         <div class="toolbar-section">   
           <div class="toolbar-item form-field">
-            <a href="#/pinster/user/"><button class="user-board-button" ng-model="userData">{{userData.email}}'s boards</button></a>
-            <input type="text" name="filter" placeholder="phrase to filter" ng-model="search"/>
+            <input type="text" class="search-bar" name="filter" placeholder="phrase to filter" ng-model="search">
+            <a href="#/pinster/user/" class="nav-button btn btn-default btn-xs" ng-model="userData">{{userData.email}}'s PINS</a>
           </div>
         </div><!-- /.toolbar-section -->
       </div><!-- /.container -->
@@ -23,8 +23,8 @@
         <p class="content-box-blurb">
           {{ gridItem.blurbText }}
         </p>
-        <button id="pin-it" class="pin-it-button" ng-click="addPin()" title="{{gridItem.headerText}}" description="{{gridItem.blurbText}}" imageUrl="{{gridItem.img}}">Pin It!</button>
-        <a class="readmore-link" href="#" ng-click="addPin()"toggleBlurb($event)">read more
+        <button id="pin-it" class="btn btn-default btn-xs pin-it-button" ng-click="addPin()" title="{{gridItem.headerText}}" description="{{gridItem.blurbText}}" imageUrl="{{gridItem.img}}">Pin It!</button>
+        <a class="readmore-link" href="#" ng-click="addPin()"toggleBlurb($event)>read more
 
         </a>
         </div>

@@ -3,31 +3,30 @@
     <div class="toolbar">
       <div class="container">
         <div class="toolbar-section">
-          <span class="logo toolbar-item"><i class="fa fa-picture-o"></i><a href="#/pinster/main/">Pinster</a>
-          <button id="create-new-board-button" class="user-board-button" ng-click="showAddBoardModal()">Add Pin</button></span>
+          <span class="logo toolbar-item"><i class="fa fa-picture-o"></i><a href="#/pinster/main/" id="pinster">Pinster</a>
         </div><!-- /.toolbar-section -->
         <div class="toolbar-section">
           <div class="toolbar-item form-field">
-            <input type="text" name="filter" placeholder="phrase to filter" ng-model="search"/><span id="usersInterests">USERNAME'S INTERESTS</span>
+            <input type="text" name="filter" placeholder="phrase to filter" ng-model="search"/>
+          <button id="create-new-board-button" class="add-pin btn btn-default btn-xs" ng-click="showAddBoardModal()">Add Pin</button></span>
           </div>
         </div><!-- /.toolbar-section -->
       </div><!-- /.container -->
     </div><!-- /.toolbar -->
 
-    <div class="container dynamic-grid-user">
-      <article class="grid-item-user content-box" ng-repeat="(gridKey, gridItem) in gridItems | filter:filterBySearch">
-    <!-- <div id="specificInterest">Specific Interest Here</div> -->
-        <a href="#"><h1 class="content-box-header">
+    <div class="container dynamic-grid">
+      <article class="grid-item content-box" ng-repeat="(gridKey, gridItem) in gridItems | filter:filterBySearch">
+        <div class="inner">
+           <a href="{{gridItem.url}}"><img class="content-box-thumb-small"src="{{ gridItem.img }}" alt="tech image" /></a>
+        <h1 class="content-box-header">
           {{ gridItem.headerText }}
-        </h1></a>
-        <div class="user-inner">
-        <a href="#"><img class="content-box-thumb-small"src="{{ gridItem.img }}" alt="tech image" /></a>
-
+        </h1>
         <p class="content-box-blurb">
           {{ gridItem.blurbText }}
         </p>
+        <a class="user-readmore-link" href="#" ng-click="addPin()"toggleBlurb($event)>read more
 
-        <a class="readmore-link" href="#" ng-click="toggleBlurb($event)">read more</a>
+        </a>
         </div>
       </article><!-- /.content-box -->
 
@@ -40,15 +39,15 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Create Your New Modal</h4>
+            <h4 class="modal-title">Create Your New Pin</h4>
           </div>
           <div class="modal-body">
             <div>
               <label for="board-title">Title:</label><input type="text" ng-model="title">
             </div>
-            <!-- <div>
-              <label for="url">Url:</label><input type="text">
-            </div> -->
+            <div>
+              <label for="url">Url:</label><input type="text" ng-model="url">
+            </div>
             <div>
               <label for="image-url">Image Url:</label><input type="text" ng-model="imageurl">
             </div>
@@ -59,8 +58,11 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" ng-click="createNewBoard()">Save changes</button>
+            <button type="button" class="btn btn-primary" ng-click="createNewBoard()">Save</button>
           </div>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+
+
+    <!-- <a href="{{gridItem.url}}"><img class="content-box-thumb-small"src="{{ gridItem.img }}" alt="tech image" /></a> -->
