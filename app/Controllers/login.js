@@ -1,3 +1,5 @@
+/// this module allows the user to log in/register with email and password for the website ///
+
 contentBoxApp.controller('login', ["$scope", "Auth",
   function($scope, Auth) {
   	console.log("I see login!!");
@@ -5,6 +7,7 @@ contentBoxApp.controller('login', ["$scope", "Auth",
       $scope.message = null;
       $scope.error = null;
 
+    /// registering with email/password - firebase then creates a unique id for this user to keep their profiles for future use ///
       Auth.$createUser({
         email: $scope.email,
         password: $scope.password
@@ -18,30 +21,18 @@ contentBoxApp.controller('login', ["$scope", "Auth",
 		    	"email": $scope.email,
 		    	"password": $scope.password
 		    };
-		    // sets new user data object to firebase
+		    /// sets the new user data object to the firebase database ///
 		    newfbRef.set(userData);
       }).catch(function(error) {
         $scope.error = error;
       });
     };
 
-    $scope.removeUser = function() {
-      $scope.message = null;
-      $scope.error = null;
-
-      Auth.$removeUser({
-        email: $scope.email,
-        password: $scope.password
-      }).then(function() {
-        $scope.message = "User removed";
-      }).catch(function(error) {
-        $scope.error = error;
-      });
-    };
-
+    /// leaving email and password an empty string so what user inputs can then be saved to the database //
     $scope.email = "";
     $scope.password = "";
 
+    /// if user has already registered, this allows them to log in without complications ///
     $scope.login = function() {
 	    var ref = new Firebase("https://crn-pinterest.firebaseio.com/");
 			ref.authWithPassword({
